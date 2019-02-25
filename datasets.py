@@ -7,7 +7,6 @@ from sklearn.model_selection import train_test_split
 #Generic load
 def load(url,train_size=0.8,seed=42):
     filename = wget.download(url)
-    print('\n')
     data = np.load(filename)
     images = np.expand_dims(data['images']/255,axis=3)
     labels = to_categorical(data['labels'])
