@@ -26,7 +26,5 @@ def load_bacteria(train_size=0.8,seed=42):
     print("\n")
     print("Forme du tenseur d'entrée (input_shape): ", images.shape[1:])
     print("Nombre de classes de sortie: ", labels.shape[1])
-    print("\n")
-    print("\n")
 
     return (X_train,y_train),(X_test,y_test)
