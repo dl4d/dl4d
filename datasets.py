@@ -17,6 +17,6 @@ def load(url,train_size=0.8,seed=42):
     return (X_train,y_train),(X_test,y_test)
 
 def load_bacteria(train_size=0.8,seed=42):
-    print('Loading')
+    print('Loading!!')
     url = 'https://www.dropbox.com/s/conkqhwi5pd31yk/bacteria.npz?dl=1'
     return load(url,train_size,seed)
