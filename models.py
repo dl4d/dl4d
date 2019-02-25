@@ -24,8 +24,8 @@ class model:
 
         self.history = self.model.fit(data[0],data[1],validation_data=(validation_data[0],validation_data[1]),epochs=10)
 
-    def plot_model_tree(model):
-        plot_model(model, to_file='tmp_model.png')
+    def plot_model_tree(self):
+        plot_model(self.model, to_file='tmp_model.png')
         plt.figure(figsize=(20,20))
         plt.imshow(plt.imread("tmp_model.png"))
         plt.axis('off')
