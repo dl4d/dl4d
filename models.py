@@ -33,9 +33,28 @@ class model:
         plt.axis('off')
         plt.show()
 
-    def confusion_matrix_model(self,test):
+    def confusion_matrix(self,test):
         p = self.model.predict(test[0])
         return pd.crosstab(
                 pd.Series(test[1].argmax(axis=1), name='Validation'),
                 pd.Series(p.argmax(axis=1), name='Prediction')
                 )
+
+    def show_learning_graph(self):
+        #Training / Validation graph
+        # summarize history for accuracy
+        plt.plot(self.history.history['acc'])
+        plt.plot(self.history.history['val_acc'])
+        plt.title('Performance du modèle')
+        plt.ylabel('Accuracy')
+        plt.xlabel('Epochs')
+        plt.legend(['Train', 'Validation'], loc='upper left')
+        plt.show()
+        # summarize history for loss
+        plt.plot(self.history.history['loss'])
+        plt.plot(self.history.history['val_loss'])
+        plt.title('Erreur du modèle')
+        plt.ylabel('Loss')
+        plt.xlabel('Epochs')
+        plt.legend(['Train', 'Validation'], loc='upper right')
+        plt.show()
