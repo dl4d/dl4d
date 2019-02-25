@@ -10,7 +10,7 @@ class model:
     def __init__(self):
 
         model   = None
-        K.clear_session()
+        #K.clear_session()
 
         history = None
 
