@@ -12,9 +12,9 @@ class model:
     def __init__(self):
 
         model   = None
+        history = None
         #K.clear_session()
 
-        history = None
 
     def assign(self,model):
         self.model=model
