@@ -22,7 +22,7 @@ def load_bacteria(train_size=0.8,seed=42):
     print("- Nombre d'images totales: ", images.shape[0])
     print("- Proportion d'image dans le Training set:", train_size*100,"%")
     print("- Nombre d'images dans le Training set:", X_train.shape[0])
-    print("- Nombre d'images dans le Validation set:", X_valid.shape[0])
+    print("- Nombre d'images dans le Validation set:", X_test.shape[0])
     print("\n")
     print("Forme du tenseur d'entrée (input_shape): ", images.shape[1:])
     print("Nombre de classes de sortie: ", labels.shape[1])
