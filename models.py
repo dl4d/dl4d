@@ -18,7 +18,7 @@ class model:
         self.model=model
 
 
-    def train(data,validation_data):
+    def train(self,data,validation_data):
 
         self.model.compile(optimizer=Adam(lr=1e-3),loss="categorical_crossentropy",metrics=["accuracy"])
 
