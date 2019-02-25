@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 from keras.optimizers import Adam
 import keras.backend as K
 
+import pandas as pd
+
 
 class model:
 
@@ -30,3 +32,10 @@ class model:
         plt.imshow(plt.imread("tmp_model.png"))
         plt.axis('off')
         plt.show()
+
+    def confusion_matrix_model(self,test):
+        p = self.model.predict(test[0])
+        return pd.crosstab(
+                pd.Series(test[1].argmax(axis=1), name='Validation'),
+                pd.Series(p.argmax(axis=1), name='Prediction')
+                )
