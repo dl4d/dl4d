@@ -2,19 +2,31 @@ from keras.utils import plot_model
 import matplotlib.pyplot as plt
 
 from keras.optimizers import Adam
+import keras.backend as K
 
 
-def plot_model_tree(model):
-    plot_model(model, to_file='tmp_model.png')
-    plt.figure(figsize=(20,20))
-    plt.imshow(plt.imread("tmp_model.png"))
-    plt.axis('off')
-    plt.show()
+class model:
 
-def train(data,validation_data,model):
+    def __init__(self):
 
-    model.compile(optimizer=Adam(lr=1e-3),loss="categorical_crossentropy",metrics=["accuracy"])
+        model   = None
+        K.clear_session()
 
-    model.fit(data[0],data[1],validation_data=(validation_data[0],validation_data[1]),epochs=10)
+        history = None
 
-    return model
+    def assign(self,model):
+        self.model=model
+
+
+    def train(data,validation_data):
+
+        self.model.compile(optimizer=Adam(lr=1e-3),loss="categorical_crossentropy",metrics=["accuracy"])
+
+        self.history = self.model.fit(data[0],data[1],validation_data=(validation_data[0],validation_data[1]),epochs=10)
+
+    def plot_model_tree(model):
+        plot_model(model, to_file='tmp_model.png')
+        plt.figure(figsize=(20,20))
+        plt.imshow(plt.imread("tmp_model.png"))
+        plt.axis('off')
+        plt.show()
