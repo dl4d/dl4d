@@ -27,6 +27,7 @@ def show_random_images(X,y,label=None,show_mask=False):
                     plt.imshow(np.squeeze(b),cmap='gray')
                     lab = np.argmax(y[num[i]])
                     plt.axis('off')
+                    plt.title(lab)
             else:
                 for i in range (0,20):
                     plt.subplot(4,5,i+1)
