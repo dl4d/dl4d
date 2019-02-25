@@ -26,7 +26,7 @@ class model:
 
         history = self.model.fit(data[0],data[1],validation_data=(validation_data[0],validation_data[1]),epochs=10)
 
-        if hasattr(M, 'history'):
+        if hasattr(self, 'history'):
             self.history.history[self.model.metrics_names[0]]+=history.history[self.model.metrics_names[0]]
             self.history.history["val_"+self.model.metrics_names[0]]+=history.history["val_"+self.model.metrics_names[0]]
             self.history.history[self.model.metrics_names[1]]+=history.history[self.model.metrics_names[1]]
