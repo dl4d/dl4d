@@ -17,3 +17,27 @@ def show_random_images(X,y,label=None,show_mask=False):
             plt.imshow(np.squeeze(tmp[num[i]]),cmap='gray')
             plt.axis('off')
             plt.title(str(label))
+
+    else:
+            if show_mask==False:
+                for i in range(0,20):
+                    plt.subplot(4, 5, i+1)
+                    a = X[num[i]]
+                    b = (a - np.min(a))/np.ptp(a)
+                    plt.imshow(np.squeeze(b),cmap='gray')
+                    lab = np.argmax(y[num[i]])
+                    plt.axis('off')
+            else:
+                for i in range (0,20):
+                    plt.subplot(4,5,i+1)
+                    a = X[num[i]]
+                    b = (a - np.min(a))/np.ptp(a)
+                    plt.imshow(np.squeeze(b),cmap='gray')
+                    plt.axis('off')
+                fig = plt.figure(figsize=(10,10))
+                for i in range(0,20):
+                    plt.subplot(4,5,i+1)
+                    a = y[num[i]]
+                    b = (a - np.min(a))/np.ptp(a)
+                    plt.imshow(np.squeeze(b),cmap='gray')
+                    plt.axis('off')
