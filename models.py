@@ -15,6 +15,6 @@ def train(data,validation_data,model):
 
     model.compile(optimizer=Adam(lr=1e-3),loss="categorical_crossentropy",metrics=["accuracy"])
 
-    m = model.fit(data[0],data[1],validation_data=(validation_data[0],validation_data[1]),epochs=10)
+    model.fit(data[0],data[1],validation_data=(validation_data[0],validation_data[1]),epochs=10)
 
-    return m
+    return model
