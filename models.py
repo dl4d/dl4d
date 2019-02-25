@@ -1,5 +1,5 @@
 from keras.utils import plot_model
-import matplolib.pyplot as plt
+import matplotlib.pyplot as plt
 
 def plot_model(model):
     plot_model(model, to_file='tmp_model.png')
