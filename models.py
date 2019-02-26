@@ -9,10 +9,11 @@ import pandas as pd
 
 class model:
 
-    def __init__(self):
+    def __init__(self,name="NoName"):
 
         model   = None
         history = None
+        name    = name
         #K.clear_session()
 
 
@@ -58,7 +59,7 @@ class model:
         # summarize history for accuracy
         plt.plot(self.history.history['acc'])
         plt.plot(self.history.history['val_acc'])
-        plt.title('Performance du modèle')
+        plt.title(self.name +' Performance')
         plt.ylabel('Accuracy')
         plt.xlabel('Epochs')
         plt.legend(['Train', 'Validation'], loc='upper left')
@@ -66,7 +67,7 @@ class model:
         # summarize history for loss
         plt.plot(self.history.history['loss'])
         plt.plot(self.history.history['val_loss'])
-        plt.title('Erreur du modèle')
+        plt.title(self.name+' Error')
         plt.ylabel('Loss')
         plt.xlabel('Epochs')
         plt.legend(['Train', 'Validation'], loc='upper right')
